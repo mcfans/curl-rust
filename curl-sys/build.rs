@@ -302,7 +302,7 @@ fn main() {
         } else {
             panic!("Not available on non windows platform")
         }
-    } else if cfg!(feature = "ssl") {
+    } else if cfg!(feature = "ssl") || cfg!(feature = "secure-transport") {
         if windows {
             // For windows, spnego feature is auto on in case ssl feature is on.
             // Please see definition of USE_SPNEGO in curl_setup.h for more info.
